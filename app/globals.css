@@ -771,12 +771,65 @@ button:focus-visible {
 }
 
 .faq-item {
+  display: grid;
+  gap: 10px;
   padding: 22px;
 }
 
-.faq-item h2 {
+.faq-item svg,
+.support-contact-card svg {
+  color: var(--bordeaux);
+}
+
+.faq-item h2,
+.faq-item h3 {
   font-size: 1.15rem;
   margin-top: 0;
+}
+
+.support-contact-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 26px;
+}
+
+.support-contact-card {
+  align-items: flex-start;
+  background: rgba(255, 253, 248, 0.9);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 20px 55px rgba(53, 16, 19, 0.08);
+  display: flex;
+  gap: 12px;
+  padding: 18px;
+}
+
+.support-contact-card h2 {
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 950;
+  margin: 0 0 6px;
+}
+
+.support-contact-card p,
+.support-contact-card a {
+  overflow-wrap: anywhere;
+}
+
+.support-action-row {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 26px;
+}
+
+.support-action-row span,
+.support-meta {
+  color: var(--ink-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
 }
 
 .app-login-panel {
@@ -868,6 +921,10 @@ button:focus-visible {
 
   .story-grid,
   .trust-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .support-contact-grid {
     grid-template-columns: 1fr;
   }
 
