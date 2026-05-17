@@ -114,6 +114,12 @@ export default function DatenschutzPage() {
         temporäre Bild-URLs, Suchkontext, Restaurantdaten, Chat-Eingaben,
         Rückfragen und Antworten.
       </p>
+      <p>
+        Nach aktuellem Setup wird Vantero mit EU-Hosting eingesetzt. Die
+        Verarbeitung dient ausschließlich der angefragten Analyse in Wein
+        Scanner. Die übermittelten Inhalte werden nicht für Werbung,
+        Cross-App-Tracking oder den Verkauf personenbezogener Daten genutzt.
+      </p>
 
       <h3>Sentry</h3>
       <p>
@@ -198,10 +204,11 @@ export default function DatenschutzPage() {
       <p>
         Die Hauptdatenverarbeitung für Authentifizierung, Datenbank, Storage und
         App-Daten erfolgt nach aktuellem Setup in der Europäischen Union. Bei
-        Apple, Vantero, Google Maps, Google Places und einzelnen technischen
-        Diensten kann eine Verarbeitung außerhalb der Europäischen Union
-        stattfinden. Soweit erforderlich, stützen die Anbieter solche
-        Übermittlungen auf geeignete Garantien, insbesondere
+        Apple, Google Maps, Google Places und einzelnen technischen Diensten
+        kann eine Verarbeitung außerhalb der Europäischen Union stattfinden.
+        Vantero wird nach aktuellem Setup mit EU-Hosting eingesetzt. Soweit
+        dennoch eine internationale Übermittlung erforderlich wird, stützen die
+        Anbieter solche Übermittlungen auf geeignete Garantien, insbesondere
         Standardvertragsklauseln nach Art. 46 DSGVO oder andere anwendbare
         Übermittlungsmechanismen.
       </p>

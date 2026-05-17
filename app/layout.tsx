@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     template: "%s | Wein Scanner",
   },
   description:
-    "Scanne Weinetiketten, verwalte dein Weinregal und entdecke Restaurants mit starker Weinkarte. Die iOS-App für Wein-Sammler.",
+    "Scanne Weinetiketten mit Vantero KI, verwalte dein Weinregal und entdecke Restaurants mit starker Weinkarte.",
   applicationName: "Wein Scanner",
   alternates: {
     canonical: "/",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Wein Scanner | Dein persönlicher Wein-Assistent",
     description:
-      "Die iOS-App für Wein-Sammler: Etiketten scannen, Sammlung pflegen und Restaurants entdecken.",
+      "Die iOS-App für Wein-Sammler: Etiketten mit KI erkennen, Sammlung pflegen und Restaurants entdecken.",
     url: "https://wein-scanner.app",
     siteName: "Wein Scanner",
     locale: "de_DE",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Wein Scanner | Dein persönlicher Wein-Assistent",
     description:
-      "Scanne Weinetiketten, verwalte dein Weinregal und entdecke Restaurants mit starker Weinkarte.",
+      "Scanne Weinetiketten mit KI, verwalte dein Weinregal und entdecke Restaurants mit starker Weinkarte.",
     images: ["/og-image.png"],
   },
   icons: {
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#5c1a1e",
+  themeColor: "#67161d",
 };
 
 export default function RootLayout({

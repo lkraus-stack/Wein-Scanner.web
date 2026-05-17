@@ -1,21 +1,19 @@
 import {
   Apple,
-  ArrowRight,
-  Camera,
-  CheckCircle2,
-  Compass,
-  MapPinned,
   MessageCircle,
-  Search,
   ShieldCheck,
-  Sparkles,
-  Star,
-  Wine,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-const navLinks = [
+const headerLinks = [
+  { href: "/#scan", label: "Scan" },
+  { href: "/#restaurant-finder", label: "Restaurant Finder" },
+  { href: "/#datenschutz", label: "Datenschutz" },
+  { href: "/support", label: "Support" },
+];
+
+const footerLinks = [
   { href: "/datenschutz", label: "Datenschutz" },
   { href: "/impressum", label: "Impressum" },
   { href: "/support", label: "Support" },
@@ -35,7 +33,7 @@ export function Header() {
         <span>Wein Scanner</span>
       </Link>
       <nav aria-label="Hauptnavigation">
-        {navLinks.map((link) => (
+        {headerLinks.map((link) => (
           <Link href={link.href} key={link.href}>
             {link.label}
           </Link>
@@ -58,7 +56,7 @@ export function Footer() {
           </p>
         </div>
         <nav aria-label="Footer Navigation">
-          {navLinks.map((link) => (
+          {footerLinks.map((link) => (
             <Link href={link.href} key={link.href}>
               {link.label}
             </Link>
@@ -86,126 +84,32 @@ export function AppStoreBadge({ tone = "light" }: { tone?: "light" | "dark" }) {
   );
 }
 
-export function PhoneFrame({
-  children,
-  label,
+export function ScreenshotFrame({
+  alt,
+  className = "",
+  priority = false,
+  src,
 }: {
-  children: React.ReactNode;
-  label: string;
+  alt: string;
+  className?: string;
+  priority?: boolean;
+  src: string;
 }) {
   return (
-    <div className="phone" role="img" aria-label={label}>
-      <div className="phone-notch" />
-      <div className="phone-screen">{children}</div>
-    </div>
-  );
-}
-
-export function ScannerMockup() {
-  return (
-    <div className="mock-screen scanner-screen">
-      <div className="screen-top">
-        <span>Scan</span>
-        <Camera aria-hidden="true" className="h-4 w-4" />
+    <figure className={`screenshot-frame ${className}`}>
+      <div className="screenshot-device">
+        <div className="device-sensor" />
+        <Image
+          alt={alt}
+          className="screenshot-image"
+          height={932}
+          priority={priority}
+          sizes="(max-width: 640px) 62vw, (max-width: 1024px) 32vw, 360px"
+          src={src}
+          width={430}
+        />
       </div>
-      <div className="label-view">
-        <div className="scan-corners" />
-        <div className="wine-label">
-          <span>Château</span>
-          <strong>Mont Rouge</strong>
-          <small>Bordeaux 2019</small>
-        </div>
-      </div>
-      <div className="result-sheet">
-        <div>
-          <small>Erkannt</small>
-          <strong>Cabernet Sauvignon</strong>
-        </div>
-        <CheckCircle2 aria-hidden="true" className="h-5 w-5 text-olive" />
-      </div>
-    </div>
-  );
-}
-
-export function WineShelfMockup() {
-  const bottles = [
-    ["Riesling", "Mosel", "2021"],
-    ["Chianti", "Toskana", "2020"],
-    ["Syrah", "Rhône", "2018"],
-  ];
-
-  return (
-    <div className="mock-screen shelf-screen">
-      <div className="screen-top">
-        <span>Weinregal</span>
-        <Wine aria-hidden="true" className="h-4 w-4" />
-      </div>
-      <div className="shelf-stats">
-        <strong>42</strong>
-        <span>Flaschen im Bestand</span>
-      </div>
-      <div className="bottle-list">
-        {bottles.map(([name, region, year]) => (
-          <div className="bottle-row" key={name}>
-            <div className="bottle-mark" />
-            <div>
-              <strong>{name}</strong>
-              <span>
-                {region} · {year}
-              </span>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-export function SommelierMockup() {
-  return (
-    <div className="mock-screen chat-screen">
-      <div className="screen-top">
-        <span>KI-Sommelier</span>
-        <Sparkles aria-hidden="true" className="h-4 w-4" />
-      </div>
-      <div className="chat-bubble user">Was passt zu geschmortem Rind?</div>
-      <div className="chat-bubble assistant">
-        Ein gereifter Bordeaux oder ein Syrah mit feiner Würze passt sehr gut.
-      </div>
-      <div className="pairing-card">
-        <Star aria-hidden="true" className="h-4 w-4" />
-        <span>Top Pairing: Cabernet Blend</span>
-      </div>
-      <div className="input-row">
-        <span>Frag deinen Wein-Assistenten</span>
-        <ArrowRight aria-hidden="true" className="h-4 w-4" />
-      </div>
-    </div>
-  );
-}
-
-export function RestaurantMockup() {
-  return (
-    <div className="mock-screen map-screen">
-      <div className="screen-top">
-        <span>Entdecken</span>
-        <MapPinned aria-hidden="true" className="h-4 w-4" />
-      </div>
-      <div className="map-panel">
-        <div className="map-pin one" />
-        <div className="map-pin two" />
-        <div className="map-pin three" />
-        <Compass aria-hidden="true" className="h-8 w-8 text-bordeaux" />
-      </div>
-      <div className="restaurant-card">
-        <strong>Vinothek am Platz</strong>
-        <span>4,8 Google Sterne · starke Weinkarte</span>
-      </div>
-      <div className="search-chip">
-        <Search aria-hidden="true" className="h-4 w-4" />
-        <span>Restaurants in München</span>
-      </div>
-    </div>
+    </figure>
   );
 }
 
