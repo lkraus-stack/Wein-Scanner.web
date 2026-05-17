@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "4Q33M4DTL3.com.francoconsulting.winescanner",
+        "paths": ["/app-login", "/auth/*", "/reset-password"]
+      }
+    ]
+  }
+}
